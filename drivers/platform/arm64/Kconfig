@@ -103,4 +103,6 @@ config EC_QCOM_HAMOA
 
 	  This driver currently supports Hamoa/Purwa/Glymur reference devices.
 
+source "drivers/platform/arm64/nvidia/Kconfig"
+
 endif # ARM64_PLATFORM_DEVICES

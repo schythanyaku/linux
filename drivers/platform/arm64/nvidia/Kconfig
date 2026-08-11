@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# NVIDIA ARM64 Platform-Specific Device Drivers
+#
+
+config TEGRA254_HOTPLUG
+	tristate "Tegra254 PCIe hotplug for NVIDIA DGX Spark"
+	depends on PCI && ACPI
+	help
+	  Say Y here to support PCIe cable hotplug and link power
+	  management for the ConnectX-7 endpoint on Tegra254-based
+	  NVIDIA DGX Spark systems.
+
+	  Hotplug is disabled by default and must be enabled via
+	  sysfs when needed.
+
+	  If unsure, say N.

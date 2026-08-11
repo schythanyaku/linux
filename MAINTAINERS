@@ -26640,6 +26640,14 @@ M:	JC Kuo <jckuo@nvidia.com>
 S:	Supported
 F:	drivers/phy/tegra/xusb*
 
+TEGRA254 PCIE HOTPLUG DRIVER
+M:	Surabhi Chythanya Kumar <schythanyaku@nvidia.com>
+M:	Vaibhav Vyas <vavyas@nvidia.com>
+M:	Scott Fudally <sfudally@nvidia.com>
+L:	linux-tegra@vger.kernel.org
+S:	Maintained
+F:	drivers/platform/arm64/nvidia/
+
 TEHUTI ETHERNET DRIVER
 M:	Andy Gospodarek <andy@greyhouse.net>
 L:	netdev@vger.kernel.org
