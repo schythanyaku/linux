@@ -4653,6 +4653,7 @@ int pcie_retrain_link(struct pci_dev *pdev, bool use_lt)
 
 	return rc;
 }
+EXPORT_SYMBOL_GPL(pcie_retrain_link);
 
 /**
  * pcie_wait_for_link_delay - Wait until link is active or inactive
