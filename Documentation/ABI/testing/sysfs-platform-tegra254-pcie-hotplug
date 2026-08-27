@@ -1,0 +1,25 @@
+What:		/sys/bus/platform/devices/MTKP0001:00/pcie_hotplug/hotplug_enabled
+Date:		September 2026
+Contact:	Surabhi Chythanya Kumar <schythanyaku@nvidia.com>, linux-tegra@vger.kernel.org
+Description:
+		(RW) Controls PCIe cable hotplug handling for the ConnectX-7
+		endpoint on Tegra254-based NVIDIA DGX Spark systems.
+
+		Writing 1 enables hotplug handling, writing 0 disables it.
+		Reading returns the current setting. The default is 0, so the
+		endpoint remains available from normal boot enumeration unless
+		hotplug is explicitly opted into.
+
+		While enabled, removing the cable tears down the endpoint and
+		powers it off to save power, and re-inserting the cable powers
+		it back up and re-enumerates it. Userspace takes no part in the
+		cable plug and unplug path.
+
+		On a 0 -> 1 transition the driver synchronises to the current
+		cable state: with no cable present it tears the endpoint down
+		and powers it off, and with a cable present but nothing
+		enumerated it powers the endpoint up. If the cable is present
+		and the endpoint is already up, nothing changes.
+
+		Writing 0 only stops further hotplug handling. It does not
+		restore an endpoint that has already been powered down.
